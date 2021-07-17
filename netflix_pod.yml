@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+        name: netflix
+        labels:
+                app: frontendapp
+                env: dev
+
+spec:
+        containers:
+                - name: netflixweb
+                  image: gkulshre/webapp-netflix
+

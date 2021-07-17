@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+        name: firstdeployment
+        labels:
+                env: dev
+
+
+
+spec:
+        replicas: 3
+        minReadySeconds: 10
+        strategy:
+                rollingUpdate:
+                        maxSurge: 0
+                        maxUnavailable: 1
+                type: RollingUpdate
+        selector:
+           matchLabels:
+                app: app1
+        template:
+                metadata:
+                        name: profilecardpod
+                        labels:
+                                app: app1
+                spec:
+                        containers:
+                              - name: profilecardcontainer
+                                image: gkulshre/profile-web_v2
