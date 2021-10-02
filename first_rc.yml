@@ -15,6 +15,6 @@ spec:
                                 env: dev
                 spec:
                         containers:
-                                - name: nginxcontainer
-                                  image: nginx
+                                - name: mysql 
+                                  image: mysql 
                                   
